@@ -1,5 +1,5 @@
 function divideAndConquerSum(a) {
-    return (a, a.length, 0);
+    return seperateSums(a, 0, a.length);
 }
 
 function seperateSums(a, low, high) {
