@@ -25,3 +25,9 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
+
+
+Constants: if statement comparisons, overall sum (these all have a constant number of steps)
+
+Since we were required to split the array into 3 subarrays, the time would be equivalent to 3T(n / 3). This is because each time the input is divided into thirds and there are 3 calls being made recursively. Knowing this, T(n) = 3T(n / 3) when n > 1 and if n <= 1 it shoudl be T(n) = 1. In order to acheive the T(n), the base case must equal log base 3 of n. 
+
