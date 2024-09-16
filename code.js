@@ -14,14 +14,16 @@ function separateSums(a, low, high) {
     }
 
     // Calculate the midpoints for splitting the array into thirds
-    const third = Math.floor((high - low) / 3);
-    const midpoint_1 = low + third;
-    const midpoint_2 = low + 2 * third + 1;
+    // Required to make the modification from merge sort
+    const final = Math.floor((high - low) / 3);
+    const midpoint_1 = low + final;
+    const midpoint_2 = low + 2 * final + 1;
 
     // Recursively sum the three segments
-    const sum1 = separateSums(a, low, midpoint_1 + 1);
-    const sum2 = separateSums(a, midpoint_1 + 1, midpoint_2);
-    const sum3 = separateSums(a, midpoint_2, high);
+    // At this point the 
+    const sum_1 = separateSums(a, low, midpoint_1 + 1);
+    const sum_2 = separateSums(a, midpoint_1 + 1, midpoint_2);
+    const sum_3 = separateSums(a, midpoint_2, high);
 
-    return sum1 + sum2 + sum3;
+    return sum_1 + sum_2 + sum_3;
 }
