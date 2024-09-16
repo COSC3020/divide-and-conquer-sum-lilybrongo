@@ -1,24 +1,27 @@
 function divideAndConquerSum(a) {
-    return seperateSums(a, 0, a.length);
+    return separateSums(a, 0, a.length);
 }
 
-function seperateSums(a, low, high) {
-
-    if (high - low < 1) {
+function separateSums(a, low, high) {
+    // Base case: if the subarray has no elements or only one element
+    // This is the start of the run time analysis 
+    // When n <= 1 the run time is T(n) = 1, when n>1 T(n) = 3T(n/3)
+    if (high - low <= 0) {
         return 0;
     }
-
-    if ((high - low) === 1){
-        return a[0];
+    if (high - low === 1) {
+        return a[low];
     }
 
-    let midpoint_1 = low + (Math.floor(high - low) / 3);
-    let midpoint_2 = low + 2 * Math.floor((high - low) / 3) + 1;
-        
-        
-    let first = a.slice(0, midpoint_1 + 1);
-    let second = a.sice(midpoint_1 + 1, midpoint_2);
-    let third = a.slice(midpoint_2, high);
+    // Calculate the midpoints for splitting the array into thirds
+    const third = Math.floor((high - low) / 3);
+    const midpoint_1 = low + third;
+    const midpoint_2 = low + 2 * third + 1;
 
-    return seperateSums(first, 0, first.length) + seperateSums(second, 0, second.length) + seperateSums(third, 0, third.length);
+    // Recursively sum the three segments
+    const sum1 = separateSums(a, low, midpoint_1 + 1);
+    const sum2 = separateSums(a, midpoint_1 + 1, midpoint_2);
+    const sum3 = separateSums(a, midpoint_2, high);
+
+    return sum1 + sum2 + sum3;
 }
