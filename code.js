@@ -20,11 +20,5 @@ function seperateSums(a, low, high) {
     let second = a.sice(midpoint_1 + 1, midpoint_2);
     let third = a.slice(midpoint_2, high);
 
-    let end_1 = seperateSums(first, 0, first.length);
-    let end_2 = seperateSums(second, 0, second.length);
-    let end_3 = seperateSums(third, 0, third.length);
-
-    return seperateSums(end_1 + end_2 + end_3);
-        
-
+    return seperateSums(first, 0, first.length) + seperateSums(second, 0, second.length) + seperateSums(third, 0, third.length);
 }
