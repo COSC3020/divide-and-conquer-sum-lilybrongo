@@ -30,3 +30,10 @@ The base cases would be if the array has 0 elements, or the array has one elemen
 
 Since we were required to split the array into 3 subarrays, the time would be equivalent to 3T(n / 3). This is because each time the input is divided into thirds and there are 3 calls being made recursively. Knowing this, T(n) = 3T(n / 3) when n > 1, and if n <= 1 it should be T(n) = 1. Therefore, T(n) = (3^i) T(n/3^i) where i is going to be the number of recursive steps. Then we can find the toal time complexity will be T(n) = $\Theta(n)$.
 
+
+Collaborated with students Will Greiner and Daniel Collins to arrive at an answer. Also referrenced lecture slides and videos. 
+
+I certify that I have listed all sources used to complete this exercise, including the use
+of any Large Language Models. All of the work is my own, except where stated
+otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is
+suspected, charges may be filed against me without prior notice.
