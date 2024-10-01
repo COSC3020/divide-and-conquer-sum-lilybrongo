@@ -26,8 +26,7 @@ and solve it as we did in the lectures. Give the final $\Theta$ complexity.
 Describe your reasoning and the conclusion you've come to. Your reasoning is the
 most important part. Add your answer to this markdown file.
 
+The base cases would be if the array has 0 elements, or the array has one element. The constants would include calculations and adding the final results. 
 
-Constants: if statement comparisons, overall sum (these all have a constant number of steps)
-
-Since we were required to split the array into 3 subarrays, the time would be equivalent to 3T(n / 3). This is because each time the input is divided into thirds and there are 3 calls being made recursively. Knowing this, T(n) = 3T(n / 3) when n > 1 and if n <= 1 it should be T(n) = 1. In order to acheive the T(n), the base case must equal log base 3 of n. 
+Since we were required to split the array into 3 subarrays, the time would be equivalent to 3T(n / 3). This is because each time the input is divided into thirds and there are 3 calls being made recursively. Knowing this, T(n) = 3T(n / 3) when n > 1, and if n <= 1 it should be T(n) = 1. Therefore, T(n) = (3^i) T(n/3^i) where i is going to be the number of recursive steps. Then we can find the toal time complexity will be T(n) = $\Theta(n)$.
 
